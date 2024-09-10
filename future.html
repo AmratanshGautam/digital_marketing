@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AI & ML in Digital Marketing</title>
+    <style>
+        /* General styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            background: #1d1f21;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li a {
+            color: #fff;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: #00b4d8;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(45deg, #1d1f21, #0077b6), url('hero-image.jpg') no-repeat center center/cover;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+            transition: transform 0.5s ease;
+        }
+
+        .hero:hover h1 {
+            transform: perspective(1000px) rotateX(10deg) rotateY(10deg);
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            padding: 15px 30px;
+            background-color: #00b4d8;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            background-color: #0077b6;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Strategies Section */
+        .strategies {
+            padding: 50px 20px;
+            background-color: #e9ecef;
+            text-align: center;
+        }
+
+        .strategies h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .strategies img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #0077b6;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1em;
+            line-height: 1.5;
+        }
+ 
+         /* Case Studies Section */
+        .case-studies {
+         padding: 50px 20px;
+         background-color: #f9f9f9;
+         text-align: center;
+         }
+ 
+         .case-studies h2 {
+             font-size: 2.5em;
+             margin-bottom: 30px;
+         }
+    
+         .slider-container {
+             display: flex;
+             overflow-x: auto;
+             gap: 20px;
+             scroll-behavior: smooth;
+             padding: 20px 0;
+         }
+    
+        .slide {
+             background-color: #0077b6;
+             color: #fff;
+             padding: 20px;
+             min-width: 300px;
+             border-radius: 10px;
+             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+             transition: transform 0.3s ease;
+         }
+    
+         .slide:hover {
+             transform: translateY(-10px);
+             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+         }
+    
+         .slide h3 {
+             font-size: 1.5em;
+             margin-bottom: 10px;
+         }
+    
+         .slide p {
+             font-size: 1em;
+             line-height: 1.5;
+         }
+    
+         .slider-container::-webkit-scrollbar {
+             display: none; /* Hides scrollbar */
+         }
+    
+         @media (max-width: 768px) {
+             .slider-container {
+                 flex-direction: column;
+                 align-items: center;
+             }
+    
+             .slide {
+                 width: 100%;
+                 max-width: 400px;
+             }
+           }
+    
+             /* Footer */
+             footer {
+                 text-align: center;
+                 padding: 20px;
+                 background-color: #1d1f21;
+                 color: #fff;
+             }
+    
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .cards-container, .slider-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .cta-button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+           }
+          .future {
+                  padding: 50px 20px;
+                  background-color: #f1f1f1;
+                  text-align: center;
+              }
+          
+              .future h2 {
+                  font-size: 2.5em;
+                  margin-bottom: 30px;
+              }
+          
+              .future-content {
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: space-around;
+                  gap: 20px;
+              }
+          
+              .future-item {
+                  background-color: #0077b6;
+                  color: #fff;
+                  padding: 20px;
+                  border-radius: 10px;
+                  width: 300px;
+                  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                  transition: transform 0.3s ease, box-shadow 0.3s ease;
+              }
+          
+              .future-item:hover {
+                  transform: translateY(-10px);
+                  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+              }
+          
+              .future-item h3 {
+                  font-size: 1.5em;
+                  margin-bottom: 10px;
+              }
+          
+              .future-item p {
+                  font-size: 1em;
+                  line-height: 1.5;
+              }
+          
+              @media (max-width: 768px) {
+                  .future-content {
+                      flex-direction: column;
+                      align-items: center;
+                  }
+          
+                  .future-item {
+                      width: 100%;
+                      max-width: 400px;
+                  }
+              }
+              </style>
+          </head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">AI & ML in Marketing</div>
+            <ul class="nav-links">
+              <li><a href="index.html#home">Home</a></li>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#strategies">Strategies</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#future">Future</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="intro">
+        <h1>Revolutionizing Digital Marketing with AI & ML</h1>
+        <p>Discover how AI & ML are transforming digital advertising strategies.</p>
+        <a href="#strategies" class="cta-button">Learn More</a>
+    </section>
+
+    <!-- AI & ML Strategies Section -->
+    <section class="strategies" id="strategies">
+        <h2>AI & ML Strategies in Digital Marketing</h2>
+        <img src="img\ai.dm.jfif" alt="AI and ML Strategies">
+        <div class="cards-container">
+            <div class="card">
+                <h3>AI-Powered Customer Segmentation</h3>
+                <p>AI helps in categorizing customers based on behavior, preferences, and demographics.</p>
+            </div>
+            <div class="card">
+                <h3>Predictive Analytics for Campaigns</h3>
+                <p>ML algorithms predict outcomes and optimize campaigns for better results.</p>
+            </div>
+            <div class="card">
+                <h3>Personalization and Dynamic Content</h3>
+                <p>ML personalizes ads and dynamically adjusts content for individual users.</p>
+            </div>
+            <div class="card">
+                <h3>Programmatic Advertising</h3>
+                <p>Automate ad buying and improve ad placements using AI-driven systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="case-studies" id="case-studies">
+        <h2>Case Studies</h2>
+        <img src="img\aics.jpg" alt="Case Studies">
+        <div class="slider-container">
+            <div class="slide">
+                <h3>Indosat - AI in Personalization</h3>
+                <p>Indosat saw a 25% increase in conversion rates by using AI to personalize customer experiences.</p>
+            </div>
+            <div class="slide">
+                <h3>X - ML for Predictive Analytics</h3>
+                <p>X used ML to predict customer behavior, resulting in a 15% growth in sales.</p>
+            </div>
+            <div class="slide">
+                <h3>Pacmann - Programmatic Advertising</h3>
+                <p>By leveraging programmatic advertising, Pacmann reduced their cost per acquisition by 30% and improved targeting accuracy.</p>
+            </div>
+            </div>
+</section>
+<!-- Future Section -->
+<section class="future" id="future">
+    <h2>The Future of AI & ML in Digital Marketing</h2>
+    <div class="future-content">
+        <div class="future-item">
+            <h3>Advanced Personalization</h3>
+            <p>AI will provide hyper-personalized experiences to users by analyzing real-time data and behaviors, tailoring content, ads, and offers more accurately.</p>
+        </div>
+        <div class="future-item">
+            <h3>Predictive Analytics Expansion</h3>
+            <p>ML models will become more advanced, allowing businesses to forecast trends and customer behavior with even greater precision, helping marketers optimize strategies proactively.</p>
+        </div>
+        <div class="future-item">
+            <h3>AI-Driven Creativity</h3>
+            <p>AI tools will assist marketers in generating creative assets like ads, videos, and graphics that are optimized for various user segments, speeding up production cycles.</p>
+        </div>
+        <div class="future-item">
+            <h3>Ethical AI and Data Privacy</h3>
+            <p>The growing influence of AI will come with the need for ethical guidelines. Transparency, fairness, and data privacy will be paramount as AI becomes a core component of marketing strategies.</p>
+        </div>
+        <div class="future-item">
+            <h3>Voice and Visual Search Optimization</h3>
+            <p>As voice and visual search gain popularity, AI will play a significant role in making sure content is optimized for these technologies, enhancing the customer search experience.</p>
+        </div>
+        <div class="future-item">
+            <h3>Immersive Experiences with AR & VR</h3>
+            <p>AI-powered AR and VR experiences will offer brands new ways to engage customers, allowing for immersive interactions with products and services online.</p>
+        </div>
+    </div>
+</section>
+<footer>
+    <center><p>&copy; 2024 A.G. Corp. All rights reserved.</p></center>
+</footer>
+</body>

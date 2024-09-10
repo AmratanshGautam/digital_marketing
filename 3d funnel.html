@@ -1,0 +1,257 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Funnel of Digital Marketing</title>
+    <style>
+        /* General styling for body */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: #e0eafc;
+        }
+
+        /* Container styling */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s ease-in-out;
+        }
+
+        .container:hover {
+            border-color: #1f3b52;
+            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.8);
+            transform: scale(1.01);
+        }
+
+        /* 3D Heading style */
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            color: #00d9ff;
+            text-shadow: 2px 2px 8px rgba(0, 217, 255, 0.5);
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
+
+        h1:hover {
+            color: #0f9bff;
+            text-shadow: 0px 0px 20px rgba(15, 155, 255, 0.7), 0px 0px 30px rgba(0, 217, 255, 0.5);
+        }
+
+        /* Sub-heading style */
+        h2 {
+            font-size: 2.2em;
+            color: #e0eafc;
+            margin-bottom: 15px;
+            position: relative;
+            text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #00d9ff;
+            margin-top: 8px;
+            transition: width 0.3s ease;
+        }
+
+        h2:hover::after {
+            width: 70px;
+        }
+
+        h2:hover {
+            color: #00d9ff;
+            text-shadow: 1px 1px 15px rgba(0, 217, 255, 0.7);
+        }
+
+        /* Paragraph styling */
+        p {
+            text-align: justify;
+            line-height: 1.8;
+            font-size: 1.1em;
+            color: #b0c4de;
+        }
+
+        /* Image styling with 3D flip effects */
+        .left-img, .right-img {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 0.2);
+            transition: transform 0.8s ease-in-out;
+            perspective: 1000px;
+            backface-visibility: hidden;
+        }
+
+        .left-img:hover, .right-img:hover {
+            transform: rotateY(180deg);
+        }
+
+        /* Float image to left */
+        .left-img {
+            float: left;
+            margin-right: 20px;
+        }
+
+        /* Float image to right */
+        .right-img {
+            float: right;
+            margin-left: 20px;
+        }
+
+        /* Clearfix to prevent floating issues */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Button styling */
+        .button {
+            display: inline-block;
+            background-color: #00d9ff;
+            color: white;
+            padding: 10px 20px;
+            margin: 30px auto;
+            text-align: center;
+            font-size: 1.2em;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0px 5px 15px rgba(0, 217, 255, 0.5);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Button hover effect with space-like trailing */
+        .button::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, rgba(0, 217, 255, 0.2) 20%);
+            transition: all 0.4s ease-in-out;
+            transform: translate(-50%, -50%) scale(0.5);
+            opacity: 0;
+        }
+
+        .button:hover::before {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .button:hover {
+            background-color: #0f9bff;
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 20px rgba(0, 91, 181, 0.7);
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #00d9ff;
+            color: white;
+            font-size: 1em;
+            box-shadow: 0px -3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            .left-img, .right-img {
+                float: none;
+                display: block;
+                margin: 20px auto;
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: 1em;
+            }
+            .button {
+                font-size: 1em;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Container for content -->
+    <div class="container">
+        <!-- Main Heading -->
+<h1>3D Funnel of Digital Marketing</h1>
+
+<!-- Section 1: What is the 3D Funnel? -->
+<div class="clearfix">
+    <img src="img\3d_funnel.png" alt="Digital Marketing Funnel" class="left-img">
+    <h2>What is the 3D Funnel?</h2>
+    <p>The 3D funnel in digital marketing represents a layered strategy that marketers use to attract, engage, and convert customers. It visualizes the consumer journey, starting from awareness at the top of the funnel, moving to consideration in the middle, and ending with conversion at the bottom.</p>
+    <p>This funnel model adds a third dimension that reflects a deeper understanding of customer behavior, such as how they interact with different touchpoints, the financial investments at each stage, and how businesses manage their advertising efforts to maximize returns. Each stage requires a specific marketing approach and financial strategy to guide potential customers down the funnel.</p>
+</div>
+
+<!-- Section 2: Top of the Funnel (Awareness) -->
+<div class="clearfix">
+    <img src="img\awareness.png" alt="Awareness Stage" class="right-img">
+    <h2>Top of the Funnel (Awareness)</h2>
+    <p>The awareness stage is where potential customers first learn about your brand. Here, the focus is on reaching a broad audience through tactics like social media advertising, content marketing, and display ads. This stage typically involves a higher financial investment in paid ads and campaigns to drive traffic and visibility.</p>
+    <p>Common strategies include building brand awareness through SEO optimization, social media marketing, influencer collaborations, and creating engaging content that educates and entertains. The goal is to attract attention and spark interest in your products or services.</p>
+</div>
+
+<!-- Section 3: Middle of the Funnel (Consideration) -->
+<div class="clearfix">
+    <img src="img\consideration.jpg" alt="Consideration Stage" class="left-img">
+    <h2>Middle of the Funnel (Consideration)</h2>
+    <p>At the consideration stage, your audience is already aware of your brand and is now evaluating whether your product or service meets their needs. This stage involves nurturing leads through personalized email marketing, retargeting ads, and offering detailed content such as white papers, case studies, or product demos.</p>
+    <p>Here, investment focuses on retargeting strategies and increasing engagement with users who have already interacted with your brand. This part of the funnel is crucial for building relationships and convincing leads to move closer to making a purchase decision.</p>
+</div>
+
+<!-- Section 4: Bottom of the Funnel (Conversion) -->
+<div class="clearfix">
+    <img src="img\conversion.jpg" alt="Conversion Stage" class="right-img">
+    <h2>Bottom of the Funnel (Conversion)</h2>
+    <p>The bottom of the funnel is where prospects become customers. This stage is all about converting leads into buyers by offering strong calls to action, providing discounts, and simplifying the checkout process. Personalized messaging, testimonials, and clear value propositions can make a huge difference.</p>
+    <p>Financially, this is the stage where investments should provide the greatest return, with a focus on paid ads targeting high-intent audiences and conversion rate optimization strategies. Maximizing conversions can involve A/B testing, sales promotions, and loyalty programs to ensure customer satisfaction.</p>
+</div>
+<!-- Footer Section -->
+<footer >
+    <center><p style="text-align: center;color: black;">&copy; 2024 A.G. Corp. All rights reserved.</p></center>
+</footer>
+
+<!-- End of the Container -->
+</div>
+
+</body>
+</html>

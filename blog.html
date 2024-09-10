@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: #fff;
+            animation: fadeInDown 2s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            padding: 50px;
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        section:nth-child(even) {
+            flex-direction: row-reverse; /* Alternates the image position */
+        }
+
+        section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .content {
+            flex: 1;
+            padding: 40px;
+            opacity: 0;
+            animation: fadeInUp 1.5s forwards;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        img {
+            max-width: 45%;
+            height: auto;
+            border-radius: 0 15px 15px 0;
+            transition: transform 0.3s ease;
+            opacity: 0;
+            animation: fadeInRight 1.5s forwards;
+        }
+
+        section:nth-child(even) img {
+            border-radius: 15px 0 0 15px; /* Adjust the border-radius for alternating sides */
+        }
+
+        section:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #333;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            img {
+                max-width: 100%;
+                border-radius: 0;
+            }
+        }
+
+        /* Creative Animations */
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>OUR BLOGS</h1>
+        <p>Top 7 Trendings In Digital Marketing By- "S.Gautam" </p>
+    </header>
+
+    <div class="container">
+        <section id="VSO">
+            <div class="content">
+                <h2>Voice Search Optimisation</h2>
+                <p>Voice search optimization is becoming increasingly important in digital marketing as more people use voice-activated devices like smartphones and smart speakers. By optimizing your website for voice search, you can improve your visibility in search engine results pages (SERPs) and reach a wider audience. This involves using natural language keywords, creating long-tail queries, and ensuring your content is easily understood by voice recognition technology. By understanding and implementing voice search optimization strategies, businesses can stay ahead of the curve and capitalize on the growing popularity of voice search.</p>
+            </div>
+            <img src="img\vso.jfif" alt="Voice Search Optimisation">
+        </section>
+
+        <section id="AI">
+            <div class="content">
+                <h2>Artifecial Intelligence</h2>
+                <p>Artificial intelligence (AI) is revolutionizing digital marketing by automating tasks, providing personalized experiences, and gaining valuable insights from data. AI-powered tools can analyze customer behavior, predict trends, and optimize marketing campaigns for maximum effectiveness. From chatbots that provide instant customer support to targeted advertising that reaches the right audience, AI is transforming the way businesses interact with their customers and achieve their marketing goals.</p>
+            </div>
+            <img src="img\AI.jfif" alt="A.I.">
+        </section>
+
+        <section id="IM">
+            <div class="content">
+                <h2>Influencer Marketing</h2>
+                <p>Influencer marketing is a powerful strategy in digital marketing that involves partnering with influential individuals to promote products or services to their followers. By leveraging the trust and credibility of influencers, businesses can reach targeted audiences, increase brand awareness, and drive conversions. Influencers can create authentic content that resonates with their followers, leading to more organic engagement and positive brand perception.</p>
+            </div>
+            <img src="img\influ.jfif" alt="Influencer Marketing">
+        </section>
+
+        <section id="AR">
+            <div class="content">
+                <h2>Augumented Reeality</h2>
+                <p>Augmented reality (AR) is a technology that overlays digital information onto the real world, creating interactive and immersive experiences. In digital marketing, AR can be used to enhance product demonstrations, provide virtual try-ons, and offer interactive content. By providing customers with a more engaging and personalized experience, AR can drive brand loyalty, increase conversions, and create memorable brand interactions.</p>
+            </div>
+            <img src="img\au.jfif" alt="Augumented Reeality">
+        </section>
+
+        <section id="SC">
+            <div class="content">
+                <h2>Social Commerce</h2>
+                <p>Social commerce is the integration of shopping experiences directly into social media platforms. It allows users to discover, purchase, and share products without leaving their favorite social networks. This seamless integration can drive higher engagement, increase conversions, and provide valuable customer insights. By understanding the preferences of their target audience and leveraging the power of social media, businesses can effectively implement social commerce strategies to boost sales and enhance customer satisfaction.</p>
+            </div>
+            <img src="img\SC.jfif" alt="Social Commerce">
+        </section>
+
+        <section id="AIC">
+            <div class="content">
+                <h2>AI Chatbots</h2>
+                <p>AI chatbots are becoming increasingly important in digital marketing as they offer a convenient and efficient way for businesses to interact with their customers. By providing instant responses to queries, offering personalized recommendations, and collecting valuable customer data, AI chatbots can improve customer satisfaction, increase sales, and enhance brand engagement.</p>
+            </div>
+            <img src="img\chatbot.jfif" alt="AI Chatbots">
+        </section>
+
+        <section id="ML">
+            <div class="content">
+                <h2>Machine Learning</h2>
+                <p>Machine learning is a powerful tool in digital marketing, enabling businesses to analyze vast amounts of data and gain valuable insights. By using algorithms to identify patterns and trends, machine learning can personalize marketing campaigns, optimize customer acquisition, and predict future behavior. This technology empowers businesses to make data-driven decisions, improve efficiency, and deliver more relevant and effective marketing experiences.</p>
+            </div>
+            <img src="img\ML.jfif" alt="Machine Learning">
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 A.G. Corp. All rights reserved. </p>
+    </footer>
+
+</body>
+</html>
