@@ -9,7 +9,59 @@
     <link rel="stylesheet" href="aa.css">
     <link rel="stylesheet" href="">
     <style>
-       
+       /* Add responsiveness for mobile devices */
+        @media only screen and (max-width: 768px) {
+          /* Adjust layout and styling for mobile devices */
+          .nav-bar {
+            flex-direction: column;
+          }
+          .nav-item {
+            width: 100%;
+          }
+        }
+
+        /* Add responsiveness for tablets and small desktops */
+        @media only screen and (min-width: 769px) and (max-width: 1024px) {
+          /* Adjust layout and styling for tablets and small desktops */
+          .nav-bar {
+            flex-direction: row;
+          }
+          .nav-item {
+            width: 20%;
+          }
+        }
+
+        /* Add responsiveness for large desktops */
+        @media only screen and (min-width: 1025px) {
+          /* Adjust layout and styling for large desktops */
+          .nav-bar {
+            flex-direction: row;
+          }
+          .nav-item {
+            width: 15%;
+          }
+        }
+
+        .nav-bar {
+          background-color: #333;
+          padding: 1rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .nav-item {
+          margin: 0 1rem;
+          transition: background-color 0.3s ease;
+        }
+
+        .nav-item:hover {
+          background-color: #444;
+        }
+
+        .nav-item.active {
+          background-color: #555;
+        }
 
     </style>
 </head>
